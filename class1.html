@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta charset="utf-8" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <title>untitled</title>
+</head>
+<body>
+<script type="text/javascript" src="class.js"></script>
+<script type="text/javascript">
+//定义一个类
+    var M=new Class;//单纯的定义一个类
+    var V=new Class({//定义一个类的同时指定这个类的别名
+        type:'V'
+    });
+    var N=new Class({//继承父类
+        parent:M
+    });
+    var n=new N({
+        name:'n'
+    });
+    console.log(n)
+//类模板生成一个新对象
+    var m=new M;//单纯的实例化
+    var v=new V({//实例化的同时顺便初始化属性
+        name:'v'
+    });
+    console.log(v);
+//扩展类的静态方法
+M.extend({
+    a:'a'
+})
+console.log(M.a);
+//扩展类的实例方法
+M.implement({
+    a:'a'
+})
+console.log(new M)
+//对象扩展自身方法
+n.mixin({
+    'nn':'nn'
+})
+console.log(n)
+</script>
+</body>
+</html>
